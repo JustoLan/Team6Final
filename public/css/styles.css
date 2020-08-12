@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.headerStuff {
+    height: 4.3em;
+    margin: 0;
+    padding: 0;
+    background-color: darkgray;
+}
+
+
+.headerlogo {
+    float: left;
+}
+
+.backArrow {
+    background-color: lightgray;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 15px;
+    margin-right: 10px;
+    float: left;
+}
+
+.logo {
+    width: 42px;
+    margin: 8px;
+    margin-left: 0px;
+    background-color: lightskyblue;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.profilepic {
+    width: 50px;
+    float: right;
+    border-radius: 50%;
+    padding: 0.5em;
+}
+
+.username {
+    padding-top: 0.9em;
+    padding-right: 1em;
+    padding-left: 0.3em;
+    float: right;
+    font-family: 'Noto Sans JP' , sans-serif;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.headerprofile {
+}
+
+.title {
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.mainform {
+    margin: 5%;
+    margin-bottom: 0;
+    padding-left: 2%;
+    padding-right: 2%;
+    border: 1px solid darkgray;
+}
+
+.category a{
+    text-transform: lowercase;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+}
+
+.inForm label{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+input[type=text], select {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=email] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=tel] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=images] {
+    width: 20%;
+    padding: 10%;
+    margin: 5px 0;
+
+}
+
+.imginput {
+    width: 5em;
+    padding: 3em;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    border: none;
+    background-color: darkgray;
+    color: black;
+    padding: 15px 45px;
+}
+
+
+.category {
+    border-bottom: 1px solid darkgray;
+}
+

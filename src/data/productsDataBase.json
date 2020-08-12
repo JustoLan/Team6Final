@@ -1,0 +1,63 @@
+[
+    {
+        "id": 51
+    },
+    {
+        "id": 52,
+        "name": "POLERA BASICA ",
+        "price": 1092,
+        "discount": 0,
+        "category": "MUJER",
+        "description": "Polera básica de mangas largas con bordes interiores redondeados. El vivo de tul aterciopelado en puños renueva el detalle clásico de la marca con un toque cálido, femenino y sutil. TEJIDO: Jersey elastizado elaborado con algodón egipcio de título fino. Importado de Brasil.",
+        "image": "mujer10.jpg"
+    },
+    {
+        "id": 53,
+        "name": "Babucha Gris Clon",
+        "price": 1092,
+        "discount": 0,
+        "category": "MUJER",
+        "description": "Babucha de algodón deportiva ",
+        "image": "mujer12.jpg",
+        "talle": "S"
+    },
+    {
+        "id": 54,
+        "name": "remera rosa",
+        "price": 499,
+        "discount": 0,
+        "category": "MUJER",
+        "image": "mujer2.jpg",
+        "description": "Remera de algodón "
+    },
+    {
+        "id": 55,
+        "name": "Camisa",
+        "price": 1092,
+        "discount": 0,
+        "category": "HOMBRE",
+        "description": "camisa algodon",
+        "image": "musculosa.png",
+        "talle": "M"
+    },
+    {
+        "id": 56,
+        "name": "aaa",
+        "price": 0,
+        "discount": 0,
+        "category": "",
+        "description": "",
+        "image": "",
+        "talle": ""
+    },
+    {
+        "id": 57,
+        "name": "aaa",
+        "price": 123,
+        "discount": 123,
+        "category": "HOMBRE",
+        "description": "asd",
+        "image": "",
+        "talle": "XL"
+    }
+]
