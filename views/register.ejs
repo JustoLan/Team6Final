@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include partials/head.ejs %>
+  <body>
+    <%- include partials/header.ejs%>
+    <br> 
+    <div class="container row justify-content-center sc">
+      <div class="container">
+        <% if (errors.length >= 1) { %>
+          <p style="color: black">Error</p>
+          <ul id="errors">
+            <% for (let i = 0; i < errors.length; i += 1) { %>
+              <li>
+                <%= errors[i].msg %>
+              </li>
+            <% } %>
+          </ul>
+        <% } %>
+      </div>
+      <form method="POST" id=form action="/users/register" class="form-container">
+        <div class="form-group ">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="name" placeholder="Nombre">
+          <small class="form-text text-muted">Ingrese un Nombre</small>
+          <div class="nombre invalid-feedback"></div>
+        </div>
+        <div class="form-group">
+          <label for= "apellido">Apellido</label>
+          <input type="text" class="form-control" id="apellido" name="surname" placeholder="Apellido">
+          <small class="form-text text-muted">Ingrese un apellido</small>
+          <div class="apellido invalid-feedback"></div>
+        </div>
+        <div class="form-group "> 
+          <label for="sexo" class="control-label">Sexo</label>
+          <select class="form-control" id="sexo" name="sex">
+            <option value="M">Masculino</option>
+            <option value="F">Femenino </option>
+            <option value="O">Otro</option>
+          </select>                    
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="email@dh.com">
+          <small class="form-text text-muted">Ingrese un email</small>
+          <div class="email invalid-feedback"></div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Numero Celular</label>
+          <input type="number" class="form-control" id="celular" name="cellphone" placeholder="+54 011">
+          <small class="form-text text-muted">Ingrese un numero celular</small>
+          <div class="celular invalid-feedback"></div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Ingrese clave</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="*****">
+          <div class="password invalid-feedback"></div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Confirme clave</label>
+          <input type="password" class="form-control" id="repassword" name="passwordCheck" placeholder="*****">
+          <div class="repassword invalid-feedback"></div>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" name="acceptedTermsOfService" class="form-check-input" id="conditions">
+          <label class="form-check-label" for="exampleCheck1">Confirme condiciones</label>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+    <!-- footer -->
+    <%- include partials/footer.ejs %>
+  </body>
+</html>
