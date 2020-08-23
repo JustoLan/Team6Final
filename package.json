@@ -21,18 +21,5 @@
     "mysql2": "^2.1.0",
     "nodemon": "^2.0.4",
     "sequelize": "^6.3.4"
-  },
-  "description": "",
-  "main": "app.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JustoLan/Team6Final.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JustoLan/Team6Final/issues"
-  },
-  "homepage": "https://github.com/JustoLan/Team6Final#readme"
+  }
 }

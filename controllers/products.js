@@ -17,6 +17,8 @@ const renderFilteredProducts = async (req, res) => {
     title += ` en la categoría "${category}"`;
   }
 
+  console.log(products.price);
+
   res.render('products', {
     title,
     products,
