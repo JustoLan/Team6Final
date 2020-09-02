@@ -55,7 +55,7 @@ const create = async (req, res) => {
     image,
     talle,
   });
-  res.redirect(`/products/${product.dataValues.id}`);
+  res.redirect(`/products/${product.dataValues.product_id}`);
 };
 
 const renderProductEditForm = async (req, res) => {
@@ -70,7 +70,7 @@ const edit = async (req, res) => {
 
   const updatedProduct = await Product.update({ name, price, discount, category, image, description }, {
     where: {
-      id: req.params.productId,
+      product_id: req.params.productId,
     },
   });
 
@@ -82,7 +82,7 @@ const edit = async (req, res) => {
 const remove = async (req, res) => {
   await Product.destroy({
     where: {
-      id: req.params.productId,
+      product_id: req.params.productId,
     },
   });
   res.redirect(`/products`);

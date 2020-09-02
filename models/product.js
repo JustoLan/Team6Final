@@ -2,7 +2,7 @@ const { DataTypes, Op } = require('sequelize');
 const sequelize = require('../database');
 
 const Product = sequelize.define('Product', {
-  id: {
+  product_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
@@ -32,6 +32,18 @@ const Product = sequelize.define('Product', {
     type: DataTypes.STRING,
   },
 });
+
+Product.associate  = function(models) {
+  Product.belongsToMany(models.User, {
+    as: "users",
+    through: "carrito",
+    foreingKey: "product_id",
+    otherKey: "user_id",
+    timestamps: false
+  });
+},
+
+
 
 Product.searchProduct = function(query) {
   if (!query) {

@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Inicializar express-session para rastrear a los usuarios logueados
 app.use(session({
-  key: 'user_id',
+  key: 'user_sid',
   secret: 'asdasdasd',
   resave: false,
   saveUninitialized: false,

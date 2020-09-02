@@ -5,7 +5,7 @@ const sequelize = require('../database');
 const User = sequelize.define(
   'User',
   {
-    id: {
+    user_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
@@ -54,6 +54,17 @@ const User = sequelize.define(
     },
   }
 );
+
+User.associate  = function(models) {
+  User.belongsToMany(models.Product, {
+    as: "products",
+    through: "carrito",
+    foreingKey: "user_id",
+    otherKey: "product_id",
+    timestamps: false
+  });
+},
+
 
 sequelize
   .sync()

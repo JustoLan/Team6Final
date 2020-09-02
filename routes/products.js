@@ -1,6 +1,9 @@
 const express = require('express');
-const productsController = require('../controllers/products');
 const multer = require('multer');
+
+const productsController = require('../controllers/products');
+const requireSession = require('../middleware/require-session');
+
 const storage = multer.diskStorage({
         destination: (req, file, callback) => {
             callback(null, './public/images/uploadedForProduct')
@@ -15,14 +18,14 @@ const router = express.Router();
 
 router.get('/', productsController.renderFilteredProducts);
 
-router.get('/create', productsController.renderProductCreateForm);
-router.post('/create', upload.single('image'), productsController.create);
+router.get('/create', requireSession, productsController.renderProductCreateForm);
+router.post('/create', requireSession, upload.single('image'), productsController.create);
 
-router.get('/:productId/edit', productsController.renderProductEditForm);
-router.patch('/:productId', productsController.edit);
+router.get('/:productId/edit', requireSession, productsController.renderProductEditForm);
+router.patch('/:productId', requireSession, productsController.edit);
 
 router.get('/:productId', productsController.renderProductDetails);
 
-router.get('/:productId/remove', productsController.remove);
+router.get('/:productId/remove', requireSession, productsController.remove);
 
 module.exports = router;
