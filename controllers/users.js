@@ -13,6 +13,7 @@ const renderRegisterForm = (req, res) => {
   res.render('register', { errors: [] });
 };
 
+// TODO ACACACACACAC
 const register = async (req, res) => {
   const {
     name,
@@ -37,7 +38,7 @@ const register = async (req, res) => {
       acceptedTermsOfService,
     });
 
-    res.cookie('user_sid', user.dataValues.id, { maxAge: 900000, httpOnly: true });
+    req.session.user = user.dataValues;
     res.redirect('/');
 
   } catch (error) {
@@ -54,22 +55,25 @@ const addToCart = (req, res) => {
 const renderLoginForm = (req, res) => {
   res.render('login');
 };
+
+// TODO ACACACACACAC
 const login = async (req, res) => {
   const { email, password } = req.body;
 
   const user = await User.findOne({ email });
 
-  const isPasswordValid = await validPassword(password, user.dataValues. password)
+  if (!user) {
+    return res.redirect('/users/login');
+  }
 
-  if (isPasswordValid) {
-    console.log(user.dataValues.name)
-    res.cookie('user_id', user.dataValues.user_id, { maxAge: 900000 });
-    req.session.userId = user.dataValues.user_id;
-    res.cookie('user_name', user.dataValues.name, { maxAge: 900000 });
-    res.redirect('/');
+  const isPasswordValid = await validPassword(password, user.dataValues.password)
+
+  if (!isPasswordValid) {
+    return res.redirect('/users/login');
   } else {
-    res.redirect('/users/login');
-    res.cookie('Non valid', "algo", { maxAge: 900000 });
+    console.log(user.dataValues);
+    req.session.user = user.dataValues;
+    res.redirect('/');
   }
 };
 
@@ -78,7 +82,7 @@ const logout = (req, res) => {
     res.clearCookie('user_sid');
     res.redirect('/');
   } else {
-    res.redirect('/login');
+    res.redirect('/users/login');
   }
 };
 
